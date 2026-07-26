@@ -32,6 +32,30 @@ Optional IPv6 AAAA: see [GitHub Pages custom domain docs](https://docs.github.co
 
 **Leave AgaveApps.com on its current host** until you stand up dynamic hosting.
 
+## Live check (2026-07-25) — fix this
+
+Apex currently resolves to **mixed** A records:
+
+| IP | Status |
+|---|---|
+| `185.199.109.153` / `.110.` / `.111.` | GitHub Pages ✅ |
+| `162.210.101.52` | **Stale (old Apache host)** — delete |
+| `185.199.108.153` | **Missing** — add |
+
+Symptom: `http://sharonoak.com/...` often works; `https://` returns **403** (wrong origin / cert never completes). Until fixed, share Scoreboard as `http://sharonoak.com/agave/pl1-CW/` or open the local HTML — don’t rely on HTTPS links.
+
+**Do now at DNS provider:** remove `162.210.101.52`; ensure all four GitHub A records above; wait for cert → then Enforce HTTPS in Pages settings.
+
 ## Source of truth
 
 Edit files in the SharonOak workspace under `sites/sharonoak/`, then push to `TylerSharonOak/sharonoak`.
+
+## Private share pages (no nav)
+
+Unlisted HTML under paths like `/agave/...` — not linked from the homepage.
+
+| Path | Purpose |
+|---|---|
+| [/agave/pl1-CW/](https://sharonoak.com/agave/pl1-CW/) | Project Scoreboard working draft for Chase (pl1 = product lite 1; CW = Chase Wolf) |
+
+Source: `sites/sharonoak/agave/pl1-CW/index.html` (also mirrored from `products/agave-landscape/one-pager.html`). Pages have `noindex`.
