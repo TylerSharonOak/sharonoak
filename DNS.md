@@ -1,6 +1,6 @@
 # Sharon Oak — GitHub Pages
 
-Static holding-company site for **sharonoak.com**.
+Company site for **sharonoak.com**. Homepage is advisory-first (holdco is later).
 
 **Repo:** [TylerSharonOak/sharonoak](https://github.com/TylerSharonOak/sharonoak)  
 **Pages host (before DNS):** `https://tylersharonoak.github.io/sharonoak/` (redirects to custom domain once DNS is live)
@@ -28,23 +28,15 @@ Optional IPv6 AAAA: see [GitHub Pages custom domain docs](https://docs.github.co
 | CNAME | `www` | `tylersharonoak.github.io` |
 
 3. Wait for DNS + GitHub certificate (often under an hour).
-4. Confirm `https://sharonoak.com` shows the holding page and Agave Apps links to `https://agaveapps.com`.
+4. Confirm `https://sharonoak.com` shows the advisory homepage and Agave Apps still links to `https://agaveapps.com`.
 
 **Leave AgaveApps.com on its current host** until you stand up dynamic hosting.
 
-## Live check (2026-07-25) — fix this
+## Live check (2026-07-26) — HTTPS OK
 
-Apex currently resolves to **mixed** A records:
-
-| IP | Status |
-|---|---|
-| `185.199.109.153` / `.110.` / `.111.` | GitHub Pages ✅ |
-| `162.210.101.52` | **Stale (old Apache host)** — delete |
-| `185.199.108.153` | **Missing** — add |
-
-Symptom: `http://sharonoak.com/...` often works; `https://` returns **403** (wrong origin / cert never completes). Until fixed, share Scoreboard as `http://sharonoak.com/agave/rhm/scoreboard/v1/` or open the local HTML — don’t rely on HTTPS links.
-
-**Do now at DNS provider:** remove `162.210.101.52`; ensure all four GitHub A records above; wait for cert → then Enforce HTTPS in Pages settings.
+- Apex A records: four GitHub IPs only (stale Apache gone).
+- Pages: cert **approved**, **HTTPS enforced**.
+- Share URL: https://sharonoak.com/agave/rhm/scoreboard/v1/
 
 ## Source of truth
 
@@ -56,6 +48,8 @@ Unlisted HTML — not linked from the homepage.
 
 **Path convention:** `/{sharon-oak-project}/{client}/{client-project}/{version}/`  
 Example: `agave` / `rhm` (Red Hook) / `scoreboard` / `v1`.
+
+**Ask before publishing** if any segment is unclear — do not invent slugs.
 
 | Path | Purpose |
 |---|---|

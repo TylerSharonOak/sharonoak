@@ -59,17 +59,16 @@ body {
 
 main {
   flex: 1;
-  width: min(40rem, calc(100% - 3rem));
+  width: min(42rem, calc(100% - 3rem));
   margin: 0 auto;
-  padding: 4.5rem 0 3rem;
+  padding: 3.5rem 0 3rem;
 }
 
 .hero {
-  min-height: 58vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 2.5rem;
+  padding: 1.5rem 0 2.75rem;
 }
 
 .brand {
@@ -113,13 +112,17 @@ main {
   }
 }
 
-.brands {
-  padding: 2.5rem 0;
+.work,
+.who,
+.close {
+  padding: 2.25rem 0;
   border-top: 1px solid rgba(244, 239, 230, 0.12);
   animation: lift 0.85s ease 0.28s both;
 }
 
-.brands h2 {
+.work h2,
+.who h2,
+.close h2 {
   margin: 0 0 1.25rem;
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -129,55 +132,80 @@ main {
   color: rgba(244, 239, 230, 0.5);
 }
 
-.brand-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.brand-link {
+.grid {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  column-gap: 1rem;
-  row-gap: 0.25rem;
-  padding: 1.15rem 0;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid rgba(244, 239, 230, 0.12);
-  transition: color 0.2s ease;
+  gap: 0;
 }
 
-.brand-name {
-  grid-column: 1;
+.card {
+  padding: 1.2rem 0 1.35rem;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.12);
+}
+
+.card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.card h3 {
+  margin: 0 0 0.45rem;
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--paper);
 }
 
-.brand-desc {
-  grid-column: 1;
+.card p {
+  margin: 0;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
 }
 
-.brand-go {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
+.who p,
+.close p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 38ch;
+}
+
+.close p {
+  margin-bottom: 1.25rem;
+}
+
+.close a:not(.btn) {
   color: var(--leaf);
-  font-size: 1.35rem;
-  transition: transform 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(111, 155, 106, 0.35);
 }
 
-.brand-link:hover .brand-name {
+.close a:not(.btn):hover {
   color: var(--sun);
+  border-color: rgba(232, 213, 163, 0.45);
 }
 
-.brand-link:hover .brand-go {
-  transform: translateX(4px);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.15rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  background: var(--sun);
+  color: var(--bark);
+  border: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  background: #f0e2b8;
+  color: var(--bark);
+  border: none;
+  transform: translateY(-1px);
 }
 
 .aside {
@@ -198,7 +226,7 @@ main {
 }
 
 footer {
-  width: min(40rem, calc(100% - 3rem));
+  width: min(42rem, calc(100% - 3rem));
   margin: 0 auto;
   padding: 1.25rem 0 2rem;
   display: flex;
@@ -214,7 +242,9 @@ footer {
   .brand,
   .hero h1,
   .lede,
-  .brands {
+  .work,
+  .who,
+  .close {
     animation: none !important;
   }
 }
