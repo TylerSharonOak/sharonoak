@@ -100,12 +100,11 @@ main {
 }
 
 .hero {
-  min-height: calc(72vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2.5rem 0 4rem;
-  max-width: 44rem;
+  padding: 3rem 0 3.25rem;
+  max-width: 46rem;
 }
 
 .hero h1 {
@@ -116,8 +115,7 @@ main {
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--paper);
-  max-width: 18ch;
-  animation: lift 0.85s ease both;
+  max-width: 20ch;
 }
 
 .lede {
@@ -125,7 +123,6 @@ main {
   color: var(--muted);
   font-size: 1.125rem;
   max-width: 42ch;
-  animation: lift 0.85s ease 0.12s both;
 }
 
 .cta-row {
@@ -133,18 +130,6 @@ main {
   flex-wrap: wrap;
   gap: 0.85rem 1rem;
   align-items: center;
-  animation: lift 0.85s ease 0.22s both;
-}
-
-@keyframes lift {
-  from {
-    opacity: 0;
-    transform: translateY(0.9rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .btn {
@@ -290,8 +275,7 @@ main {
 
 @media (max-width: 640px) {
   .hero {
-    min-height: auto;
-    padding: 2.5rem 0 3rem;
+    padding: 2.25rem 0 2.5rem;
   }
 
   .hero h1 {
@@ -300,10 +284,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .atmosphere,
-  .hero h1,
-  .lede,
-  .cta-row {
+  .atmosphere {
     animation: none !important;
   }
 }
