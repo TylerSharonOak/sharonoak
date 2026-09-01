@@ -1,77 +1,87 @@
 # Frymire Scoreboard — Delivery Options
 
-Internal reference for Tyler / Sharon Oak. Current artifact: static HTML at `/agave/frymire/scoreboard/v1/`.
+Internal reference for Tyler / Sharon Oak.
 
-## 1. Static HTML on sharonoak.com (current)
+| Artifact | Path | Audience |
+|---|---|---|
+| Internal dossier | [`/agave/frymire/scoreboard/v1/`](https://sharonoak.com/agave/frymire/scoreboard/v1/) | Sharon Oak / Agave working notes |
+| **Customer Territory Scoreboard** | [`/agave/frymire/scoreboard/v1/report/`](https://sharonoak.com/agave/frymire/scoreboard/v1/report/) | Showable report (Allison · Granite Comfort before Frymire leadership) |
 
-**What:** Single `index.html` with embedded Slice 3 (public research) and Slice 4 (live map pack tables). Supporting files: `queries.json`, `results.json`, `fetch_local_pack.py`.
-
-**Pros:** Zero hosting cost, private link, phone-friendly, print-to-PDF from browser, versioned in git.
-
-**Cons:** Manual re-run to refresh live data; no filters or drill-down.
-
-**Refresh:** `python3 fetch_local_pack.py && python3 generate_slice4.py` then re-embed or automate.
+Supporting files: `queries.json`, `results.json`, `fetch_local_pack.py`, `generate_slice4.py`, `generate_report.py`.
 
 ---
 
-## 2. JSON data file + generated HTML
+## 1. Customer report (primary show piece)
 
-**What:** Keep `results.json` as source of truth; `generate_slice4.py` (or CI) rebuilds HTML on schedule.
+**What:** Short Territory Scoreboard — hero, three stats, 8×2 status grid, three defend actions. Generated from `results.json`. No sprint backlog, no Slice labels.
 
-**Pros:** Separates data from presentation; easy to diff week-over-week; same static hosting.
+**Refresh:**
 
-**Cons:** Still static until someone runs the generator.
+```bash
+cd agave/frymire/scoreboard/v1
+python3 fetch_local_pack.py    # needs VALUESERP_API_KEY or SERPWOW_API_KEY
+python3 generate_report.py     # writes report/index.html
+python3 generate_slice4.py     # optional — refresh internal Slice 4 fragment
+```
 
-**Next step:** GitHub Action on cron (weekly) with `VALUESERP_API_KEY` secret → commit updated `results.json` + HTML.
+**Pros:** Phone-friendly, print-to-PDF, versioned in git, Agave Apps product frame.
 
----
+**Cons:** Static until regenerate; share gated on Allison sign-off.
 
-## 3. Google Sheet / CSV export
-
-**What:** Flatten `results.json` to one row per query (market, service, query, frymire_position, giant flags, top-3 names).
-
-**Pros:** Familiar for ops; easy share with vendors; pivot tables by market.
-
-**Cons:** Loses narrative framing; not branded; manual or scripted export.
-
-**Script sketch:** `python3 -c "import json,csv; ..."` from `results.json`.
+**Share gate:** Do not send `report/` to Frymire leadership until Allison · Granite Comfort approves.
 
 ---
 
-## 4. agaveapps.com dynamic product (later)
+## 2. Static HTML dossier on sharonoak.com (internal)
 
-**What:** Hosted scoreboard with client login, scheduled pulls, email alerts on encroachment.
+**What:** Full sprint dossier with Slice 3 research + Slice 4 live tables.
 
-**Pros:** Recurring revenue path; automated refresh; multi-client template from Frymire sprint.
+**Pros:** Zero hosting cost, private link, full methodology.
 
-**Cons:** Build time; needs Allison sign-off before external client access.
-
----
-
-## 5. PDF from print
-
-**What:** Browser print → Save as PDF from the HTML page (print CSS already in `index.html`).
-
-**Pros:** Email attachment for leadership who won't click links; same artifact as web.
-
-**Cons:** Static snapshot; no live links.
+**Cons:** Not customer-ready — use `report/` for external-facing reviews.
 
 ---
 
-## 6. API / webhook (future)
+## 3. JSON data file + generated HTML
 
-**What:** Internal endpoint returns latest `results.json` for CRM or Slack bot (“Berkeys moved to #2 in Carrollton plumbing”).
+**What:** `results.json` is source of truth; generators rebuild customer report and Slice 4.
 
-**Pros:** Fits vendor accountability use case.
-
-**Cons:** Overkill for v1 internal review.
+**Next step:** GitHub Action on weekly cron (see `.github/workflows/frymire-scoreboard-refresh.yml`) with API key secret → commit updated JSON + HTML.
 
 ---
 
-## Recommendation for this sprint
+## 4. Google Sheet / CSV export
 
-Stay on **option 1** for Allison / internal review. Add **option 2** (weekly Action) if Tyler wants recurring pulls without manual runs. Defer **option 4** until Frymire external sign-off.
+**What:** Flatten `results.json` to one row per query.
+
+**Pros:** Familiar for ops / vendors.
+
+**Cons:** Loses narrative framing.
+
+---
+
+## 5. agaveapps.com dynamic product (later)
+
+**What:** Hosted scoreboard with login, scheduled pulls, encroachment alerts.
+
+**Pros:** Recurring product path from this Frymire template.
+
+**Cons:** Build after Allison / Frymire external validation.
+
+---
+
+## 6. PDF from print
+
+**What:** Browser print → Save as PDF from `report/` (print CSS included).
+
+**Pros:** Email attachment for leadership who won't click links.
+
+---
+
+## Recommendation
+
+Use **customer `report/`** for Allison and (after gate) Frymire. Keep dossier for Sharon Oak. Automate refresh with weekly Action when API secret is configured.
 
 ## API key note
 
-`fetch_local_pack.py` reads, in order: `VALUESERP_API_KEY`, `VALUE_SERP_API_KEY`, `VALUESERP_KEY`, `SERPWOW_API_KEY`, `TRAJECT_API_KEY`. Traject Data products (ValueSerp, SERPWow) share the same Places API shape (`search_type=places`). Configure the key in Cloud Agent environment secrets or GitHub Actions secrets for automated runs.
+`fetch_local_pack.py` reads, in order: `VALUESERP_API_KEY`, `VALUE_SERP_API_KEY`, `VALUESERP_KEY`, `SERPWOW_API_KEY`, `TRAJECT_API_KEY`. Configure in Cloud Agent or GitHub Actions secrets for automated runs.
