@@ -1,0 +1,836 @@
+{
+  "fetched_at": "2026-09-01T01:09:47Z",
+  "api_key_env": "SERPWOW_API_KEY",
+  "provider": "serpwow",
+  "credits_used": 16,
+  "query_count": 16,
+  "giants": [
+    "Baker Brothers",
+    "Berkeys",
+    "Rescue Air"
+  ],
+  "results": [
+    {
+      "id": "dallas-hvac",
+      "market": "Dallas",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Dallas TX",
+      "location": "Dallas,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Dallas%20TX/@32.783913,-96.782906,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Heating & Air Conditioning Dallas City",
+          "rating": 5,
+          "reviews": 1,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Berry Best Cooling & Heating",
+          "rating": 5,
+          "reviews": 121,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Alpha Heating & Cooling Llc.",
+          "rating": 5,
+          "reviews": 155,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Dallas HVAC & Air Duct Services",
+          "rating": 5,
+          "reviews": 8,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Ellis AC & Furnace Repair",
+          "rating": 4.9,
+          "reviews": 179,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "dallas-plumbing",
+      "market": "Dallas",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Dallas TX",
+      "location": "Dallas,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Dallas%20TX/@32.783913,-96.782906,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Roto-Rooter Plumbing & Water Cleanup",
+          "rating": 4.8,
+          "reviews": 1124,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Public Service Plumbers",
+          "rating": 4.9,
+          "reviews": 1955,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Anchor Plumbing Company",
+          "rating": 5,
+          "reviews": 294,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Jake the Plumbing Pro",
+          "rating": 4.8,
+          "reviews": 194,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Reliant Plumbing - Dallas",
+          "rating": 4.5,
+          "reviews": 234,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "frisco-hvac",
+      "market": "Frisco",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Frisco TX",
+      "location": "Frisco,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Frisco%20TX/@33.1506744,-96.82361159999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Choice Air Care",
+          "rating": 4.6,
+          "reviews": 138,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Varsity Zone HVAC of Frisco",
+          "rating": 5,
+          "reviews": 50,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Frisco AC Repair Services",
+          "rating": 5,
+          "reviews": 1,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Air Repair Pros",
+          "rating": 4.9,
+          "reviews": 5354,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "One Hour Heat & AC Frisco",
+          "rating": 4.8,
+          "reviews": 617,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "frisco-plumbing",
+      "market": "Frisco",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Frisco TX",
+      "location": "Frisco,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Frisco%20TX/@33.1506744,-96.82361159999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Legacy Plumbing",
+          "rating": 4.9,
+          "reviews": 2264,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Lex's Plumbing",
+          "rating": 4.8,
+          "reviews": 1031,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "VIP PLUMBING EXPERTS LLC",
+          "rating": 4.7,
+          "reviews": 57,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "GPS Plumbing",
+          "rating": 5,
+          "reviews": 1343,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Berkeys Plumbing, A/C & Electrical",
+          "rating": 4.8,
+          "reviews": 725,
+          "brand": "Berkeys"
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {
+        "Berkeys": 5
+      },
+      "encroachment": "high"
+    },
+    {
+      "id": "mckinney-hvac",
+      "market": "McKinney",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair McKinney TX",
+      "location": "McKinney,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20McKinney%20TX/@33.243389,-96.589416,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Bill Joplin's Air Conditioning & Heating",
+          "rating": 4.9,
+          "reviews": 3783,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Burnside Air Conditioning, Heating & Plumbing",
+          "rating": 4.9,
+          "reviews": 1288,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Airview AC & Heating Repair",
+          "rating": 5,
+          "reviews": 1792,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "A/C Works",
+          "rating": 4.9,
+          "reviews": 533,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Crow's Heat & Air- McKinney",
+          "rating": 4.9,
+          "reviews": 566,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "mckinney-plumbing",
+      "market": "McKinney",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber McKinney TX",
+      "location": "McKinney,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20McKinney%20TX/@33.243389,-96.589416,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Bewley Plumbing, LLC",
+          "rating": 4.9,
+          "reviews": 345,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "JMP Plumbing Services",
+          "rating": 4.9,
+          "reviews": 759,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Roto-Rooter Plumbing & Water Cleanup",
+          "rating": 4.8,
+          "reviews": 839,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Benjamin Franklin Plumbing",
+          "rating": 4.8,
+          "reviews": 2931,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "McPlumber McKinney",
+          "rating": 4.8,
+          "reviews": 28,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "plano-hvac",
+      "market": "Plano",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Plano TX",
+      "location": "Plano,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Plano%20TX/@33.020441999999996,-96.69946399999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Samm's Heating and Air Conditioning",
+          "rating": 4.9,
+          "reviews": 1672,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Efficient Home Solutions Heating & Air of Plano",
+          "rating": 4.8,
+          "reviews": 384,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "All City",
+          "rating": 5,
+          "reviews": 223,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Total Air & Plumbing",
+          "rating": 4.9,
+          "reviews": 1769,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Air Doctor Heating",
+          "rating": 4.8,
+          "reviews": 25,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "plano-plumbing",
+      "market": "Plano",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Plano TX",
+      "location": "Plano,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Plano%20TX/@33.020441999999996,-96.69946399999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "DNA Plumbing Heating and Air",
+          "rating": 4.8,
+          "reviews": 1047,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Staggs Plumbing",
+          "rating": 4.7,
+          "reviews": 546,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Classic Plumbing",
+          "rating": 4.6,
+          "reviews": 285,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Roto-Rooter Plumbing & Water Cleanup",
+          "rating": 4.8,
+          "reviews": 897,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Plano Plumbing & Leak Detection",
+          "rating": 4.8,
+          "reviews": 265,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "fort-worth-hvac",
+      "market": "Fort Worth",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Fort Worth TX",
+      "location": "Fort Worth,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Fort%20Worth%20TX/@32.755488299999996,-97.3307658,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Fix My Air DFW AC Repair Fort Worth",
+          "rating": 5,
+          "reviews": 354,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Pure Fort Worth AC Repair",
+          "rating": 5,
+          "reviews": 2,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "HVAC AC Repair Hardware",
+          "rating": 5,
+          "reviews": 2,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Fort Worth Air Conditioning",
+          "rating": null,
+          "reviews": null,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Webb Air Heating & Cooling",
+          "rating": 5,
+          "reviews": 476,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "fort-worth-plumbing",
+      "market": "Fort Worth",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Fort Worth TX",
+      "location": "Fort Worth,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Fort%20Worth%20TX/@32.755488299999996,-97.3307658,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Benjamin Franklin Plumbing, Water Heaters, & Drain Cleaning",
+          "rating": 4.8,
+          "reviews": 2373,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Mr. Rooter Plumbing of Fort Worth",
+          "rating": 4.7,
+          "reviews": 692,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Rick's Water Heating Repair Fort Worth",
+          "rating": 5,
+          "reviews": 7,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Trusty Plumber Fort Worth",
+          "rating": 5,
+          "reviews": 12,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Service Company Plumbing",
+          "rating": 4.9,
+          "reviews": 184,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "arlington-hvac",
+      "market": "Arlington",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Arlington TX",
+      "location": "Arlington,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Arlington%20TX/@32.751121999999995,-97.13461099999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Hightower Service, Inc.",
+          "rating": 4.9,
+          "reviews": 445,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Cool Tech Mechanical",
+          "rating": 4.8,
+          "reviews": 376,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Superior AC & Heat",
+          "rating": 4.9,
+          "reviews": 316,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Texas Air & Heat",
+          "rating": 4.9,
+          "reviews": 147,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Tom's Mechanical, Inc.",
+          "rating": 4.9,
+          "reviews": 930,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "arlington-plumbing",
+      "market": "Arlington",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Arlington TX",
+      "location": "Arlington,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Arlington%20TX/@32.751121999999995,-97.13461099999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Ernie's Plumbing Service, Inc.",
+          "rating": 4.7,
+          "reviews": 2271,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Direct Source Plumbing",
+          "rating": 4.8,
+          "reviews": 233,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "STALCUP PLUMBING",
+          "rating": 4.9,
+          "reviews": 76,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Plumb Shield Plumbing - Arlington",
+          "rating": 5,
+          "reviews": 86,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "J Rowe Plumbing",
+          "rating": 4.9,
+          "reviews": 1033,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "denton-hvac",
+      "market": "Denton",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Denton TX",
+      "location": "Denton,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Denton%20TX/@33.215665,-97.132262,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "BCI Plumbing, Heating and AC Repair",
+          "rating": 4.8,
+          "reviews": 472,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Elite HVAC Repair Denton",
+          "rating": 4,
+          "reviews": 3,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Cogburn's Service General dba Cogburn's Heating & Air",
+          "rating": 4.7,
+          "reviews": 351,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Best Air Heating and Cooling Specialists",
+          "rating": 4.9,
+          "reviews": 56,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Allied Air Conditioning Solutions",
+          "rating": 5,
+          "reviews": 134,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "denton-plumbing",
+      "market": "Denton",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Denton TX",
+      "location": "Denton,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Denton%20TX/@33.215665,-97.132262,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Brown and Son\u2019s Plumbing",
+          "rating": 4.7,
+          "reviews": 67,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Plumber True Services of Denton, TX",
+          "rating": 5,
+          "reviews": 43,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Strittmatter Plumbing, Heating and AC",
+          "rating": 4.8,
+          "reviews": 2465,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Knee Deep Plumbing",
+          "rating": 5,
+          "reviews": 735,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "DRIP Plumbing",
+          "rating": 4.9,
+          "reviews": 498,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {},
+      "encroachment": "high"
+    },
+    {
+      "id": "carrollton-hvac",
+      "market": "Carrollton",
+      "service": "hvac",
+      "intent": "core",
+      "q": "ac repair Carrollton TX",
+      "location": "Carrollton,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/ac%20repair%20Carrollton%20TX/@32.805932,-96.80092499999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Jade Air, LLC",
+          "rating": 4.8,
+          "reviews": 167,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Eastin Heating and Air",
+          "rating": 4.7,
+          "reviews": 517,
+          "brand": null
+        },
+        {
+          "position": 3,
+          "title": "Ellis AC & Furnace Repair",
+          "rating": 4.9,
+          "reviews": 179,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "HVAC Air Supply - Heating& AC repair",
+          "rating": 3.7,
+          "reviews": 9,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Berkeys Plumbing, A/C & Electrical",
+          "rating": 4.9,
+          "reviews": 3336,
+          "brand": "Berkeys"
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {
+        "Berkeys": 5
+      },
+      "encroachment": "high"
+    },
+    {
+      "id": "carrollton-plumbing",
+      "market": "Carrollton",
+      "service": "plumbing",
+      "intent": "core",
+      "q": "plumber Carrollton TX",
+      "location": "Carrollton,Texas,United States",
+      "fetched_at": "2026-09-01T01:09:47Z",
+      "provider": "serpwow",
+      "engine_url": "https://www.google.com/maps/search/plumber%20Carrollton%20TX/@32.805932,-96.80092499999999,15z",
+      "leaders": [
+        {
+          "position": 1,
+          "title": "Accurate Leak and Line - Dallas",
+          "rating": 4.8,
+          "reviews": 166,
+          "brand": null
+        },
+        {
+          "position": 2,
+          "title": "Berkeys Plumbing, A/C & Electrical",
+          "rating": 4.9,
+          "reviews": 3336,
+          "brand": "Berkeys"
+        },
+        {
+          "position": 3,
+          "title": "Anchor Plumbing Company",
+          "rating": 5,
+          "reviews": 294,
+          "brand": null
+        },
+        {
+          "position": 4,
+          "title": "Jake the Plumbing Pro",
+          "rating": 4.8,
+          "reviews": 194,
+          "brand": null
+        },
+        {
+          "position": 5,
+          "title": "Public Service Plumbers",
+          "rating": 4.9,
+          "reviews": 1955,
+          "brand": null
+        }
+      ],
+      "frymire_position": null,
+      "giant_positions": {
+        "Berkeys": 2
+      },
+      "encroachment": "high"
+    }
+  ]
+}

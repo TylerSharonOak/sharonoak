@@ -721,6 +721,218 @@
       </section>
 
       <section>
+        <h2>Slice 4 — live local pack (ValueSerp / Traject)</h2>
+        <p>
+          <strong>Live pull:</strong> 2026-09-01 UTC · 16 queries · 16 API credits ·
+          provider: serpwow (Traject Data <code>search_type=places</code>).
+          Google Maps local results per market centroid — not per-ZIP. Compare to Slice 3 public
+          research above; rankings will differ by query phrasing and geo precision.
+        </p>
+        <p>
+          <strong>Query set:</strong> one HVAC + one plumbing core-intent query per market
+          (<code>ac repair &#123;city&#125; TX</code>, <code>plumber &#123;city&#125; TX</code>).
+          Full list in <a href="queries.json">queries.json</a>.
+        </p>
+
+        <div class="note">
+          <h3>Headline signals (2026-09-01)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>Live data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frymire in top 5</td>
+                <td><strong>0 of 16</strong> queries — not visible on any core query in this pull</td>
+              </tr>
+              <tr>
+                <td>Giants in top 5</td>
+                <td><strong>3 of 16</strong> — Berkeys visible in Frisco plumbing (#5), Carrollton HVAC (#5), Carrollton plumbing (#2)</td>
+              </tr>
+              <tr>
+                <td>vs Slice 3</td>
+                <td>Slice 3 giants (Baker Brothers, Rescue Air) held broad Dallas <em>web</em> local pack; this Maps pull surfaces different leaders per submarket</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Live map pack — HVAC
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Query</th>
+              <th>Top 3 visible</th>
+              <th>Frymire</th>
+              <th>Giants</th>
+              <th>Encroachment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td><code>ac repair Dallas TX</code></td>
+              <td>#1 Heating &amp; Air Conditioning Dallas City<br />#2 Berry Best Cooling &amp; Heating<br />#3 Alpha Heating &amp; Cooling Llc.</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td><code>ac repair Frisco TX</code></td>
+              <td>#1 Choice Air Care<br />#2 Varsity Zone HVAC of Frisco<br />#3 Frisco AC Repair Services</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td><code>ac repair McKinney TX</code></td>
+              <td>#1 Bill Joplin's Air Conditioning &amp; Heating<br />#2 Burnside Air Conditioning, Heating &amp; Plumbing<br />#3 Airview AC &amp; Heating Repair</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td><code>ac repair Plano TX</code></td>
+              <td>#1 Samm's Heating and Air Conditioning<br />#2 Efficient Home Solutions Heating &amp; Air of Plano<br />#3 All City</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td><code>ac repair Fort Worth TX</code></td>
+              <td>#1 Fix My Air DFW AC Repair Fort Worth<br />#2 Pure Fort Worth AC Repair<br />#3 HVAC AC Repair Hardware</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td><code>ac repair Arlington TX</code></td>
+              <td>#1 Hightower Service, Inc.<br />#2 Cool Tech Mechanical<br />#3 Superior AC &amp; Heat</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td><code>ac repair Denton TX</code></td>
+              <td>#1 BCI Plumbing, Heating and AC Repair<br />#2 Elite HVAC Repair Denton<br />#3 Cogburn's Service General dba Cogburn's Heating &amp; Air</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td><code>ac repair Carrollton TX</code></td>
+              <td>#1 Jade Air, LLC<br />#2 Eastin Heating and Air<br />#3 Ellis AC &amp; Furnace Repair</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>Berkeys #5</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Live map pack — plumbing
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Query</th>
+              <th>Top 3 visible</th>
+              <th>Frymire</th>
+              <th>Giants</th>
+              <th>Encroachment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td><code>plumber Dallas TX</code></td>
+              <td>#1 Roto-Rooter Plumbing &amp; Water Cleanup<br />#2 Public Service Plumbers<br />#3 Anchor Plumbing Company</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td><code>plumber Frisco TX</code></td>
+              <td>#1 Legacy Plumbing<br />#2 Lex's Plumbing<br />#3 VIP PLUMBING EXPERTS LLC</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>Berkeys #5</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td><code>plumber McKinney TX</code></td>
+              <td>#1 Bewley Plumbing, LLC<br />#2 JMP Plumbing Services<br />#3 Roto-Rooter Plumbing &amp; Water Cleanup</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td><code>plumber Plano TX</code></td>
+              <td>#1 DNA Plumbing Heating and Air<br />#2 Staggs Plumbing<br />#3 Classic Plumbing</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td><code>plumber Fort Worth TX</code></td>
+              <td>#1 Benjamin Franklin Plumbing, Water Heaters, &amp; Drain Cleaning<br />#2 Mr. Rooter Plumbing of Fort Worth<br />#3 Rick's Water Heating Repair Fort Worth</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td><code>plumber Arlington TX</code></td>
+              <td>#1 Ernie's Plumbing Service, Inc.<br />#2 Direct Source Plumbing<br />#3 STALCUP PLUMBING</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td><code>plumber Denton TX</code></td>
+              <td>#1 Brown and Son's Plumbing<br />#2 Plumber True Services of Denton, TX<br />#3 Strittmatter Plumbing, Heating and AC</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td><code>plumber Carrollton TX</code></td>
+              <td>#1 Accurate Leak and Line - Dallas<br />#2 Berkeys Plumbing, A/C &amp; Electrical <em>(Berkeys)</em><br />#3 Anchor Plumbing Company</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>Berkeys #2</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="source">
+          Source: Traject Data Places API (serpwow), fetched 2026-09-01 UTC.
+          Raw JSON: <a href="results.json">results.json</a>.
+          Re-run: <code>python3 fetch_local_pack.py</code> (requires
+          <code>VALUESERP_API_KEY</code> or <code>SERPWOW_API_KEY</code>).
+        </p>
+      </section>
+
+      <section>
         <h2>Locked out of v1</h2>
         <p><strong>Social</strong> — full network coverage. Out for v1.</p>
         <ul>
@@ -819,9 +1031,12 @@
         <p>
           Frymire Home Services brand on the wrapper when ready for external use. Leadership reviews
           on a phone; PDF is print/save from the same artifact. Slice 3 adds
-          <strong>public sourced data</strong> — Google review counts, map pack leaders, and
-          submarket encroachment patterns — not live per-ZIP rank pulls. Internal only until Allison
-          · Granite Comfort sign-off.
+          <strong>public sourced data</strong>; Slice 4 adds <strong>live map pack pulls</strong>.
+          Internal only until Allison · Granite Comfort sign-off.
+        </p>
+        <p>
+          Delivery options (static HTML, JSON + generated HTML, Sheets, agaveapps.com, PDF):
+          <a href="DELIVERY.md">DELIVERY.md</a>.
         </p>
       </section>
 
@@ -831,6 +1046,7 @@
           <li><strong>Done:</strong> scope lock — Frymire Home Services, HVAC + plumbing, territory defense, internal</li>
           <li><strong>Done:</strong> draft location grid from frymire.com service-area index</li>
           <li><strong>Done:</strong> Slice 3 — search-visible competitor set per service + market (public sourced data, not invented ranks)</li>
+          <li><strong>Done:</strong> Slice 4 — live local pack pull (16 queries, Traject Places API) · see <a href="DELIVERY.md">DELIVERY.md</a></li>
           <li><strong>Later:</strong> Frymire-branded wrapper when approved for external share</li>
           <li><strong>Later:</strong> product path on agaveapps.com when dynamic hosting is ready</li>
         </ol>
