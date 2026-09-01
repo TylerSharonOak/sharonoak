@@ -1,0 +1,53 @@
+# Weekly refresh of Frymire territory pack + customer report.
+# Requires repo secret: VALUESERP_API_KEY (or SERPWOW_API_KEY — see fetch_local_pack.py).
+# Optional: set workflow to workflow_dispatch only until secret is configured.
+
+name: Frymire scoreboard refresh
+
+on:
+  schedule:
+    - cron: "0 14 * * 1" # Mondays 14:00 UTC
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: agave/frymire/scoreboard/v1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch local pack
+        env:
+          VALUESERP_API_KEY: ${{ secrets.VALUESERP_API_KEY }}
+          SERPWOW_API_KEY: ${{ secrets.SERPWOW_API_KEY }}
+        run: python3 fetch_local_pack.py
+
+      - name: Generate customer report
+        run: python3 generate_report.py
+
+      - name: Generate Slice 4 fragment
+        run: |
+          python3 generate_slice4.py > /tmp/slice4.html
+          echo "Slice 4 fragment regenerated (manual embed into dossier if needed)."
+
+      - name: Commit updates
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add agave/frymire/scoreboard/v1/results.json \
+                  agave/frymire/scoreboard/v1/report/index.html
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore(frymire): weekly territory pack refresh"
+            git push
+          fi
