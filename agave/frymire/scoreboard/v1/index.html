@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Scoreboard — Frymire Home Services (internal)</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://sharonoak.com/agave/frymire/scoreboard/v1/" />
+    <meta
+      name="description"
+      content="Internal territory-defense scoreboard for Frymire Home Services — HVAC and plumbing visibility by market and service line across DFW."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #14201a;
+        --ink-soft: #3d4f45;
+        --agave: #1b4332;
+        --agave-mid: #2d6a4f;
+        --paper: #f3f6f4;
+        --line: rgba(20, 32, 26, 0.12);
+        --white: rgba(255, 255, 255, 0.72);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Outfit, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.55;
+        background:
+          radial-gradient(1100px 520px at 8% -8%, rgba(82, 183, 136, 0.2), transparent 55%),
+          radial-gradient(800px 480px at 100% 0%, rgba(27, 67, 50, 0.1), transparent 50%),
+          linear-gradient(180deg, #eef4f0 0%, var(--paper) 30%, #e7efe9 100%);
+        min-height: 100vh;
+      }
+
+      .wrap {
+        width: min(100% - 2rem, 42rem);
+        margin: 0 auto;
+        padding: 2.25rem 0 4rem;
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--agave-mid);
+        margin: 0 0 0.85rem;
+      }
+
+      .brand {
+        font-family: Fraunces, serif;
+        font-weight: 700;
+        font-size: clamp(2.2rem, 6.5vw, 3.1rem);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        color: var(--agave);
+        margin: 0 0 0.45rem;
+      }
+
+      .name-note {
+        margin: 0 0 1.15rem;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+        max-width: 40ch;
+      }
+
+      h1 {
+        font-family: Fraunces, serif;
+        font-weight: 500;
+        font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+        line-height: 1.28;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.75rem;
+        max-width: 36ch;
+      }
+
+      .lede {
+        margin: 0 0 1.25rem;
+        color: var(--ink-soft);
+        max-width: 38ch;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.25rem;
+        padding: 1rem 0 0;
+        border-top: 1px solid var(--line);
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+      }
+
+      .meta strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      section {
+        margin-top: 2.4rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--line);
+      }
+
+      section h2 {
+        font-family: Fraunces, serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0 0 0.7rem;
+        letter-spacing: -0.02em;
+      }
+
+      section p {
+        margin: 0 0 0.85rem;
+        color: var(--ink-soft);
+      }
+
+      section p:last-child {
+        margin-bottom: 0;
+      }
+
+      section p strong,
+      li strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      ol,
+      ul {
+        margin: 0.35rem 0 0;
+        padding-left: 1.15rem;
+        color: var(--ink-soft);
+      }
+
+      li {
+        margin: 0.4rem 0;
+      }
+
+      .sample,
+      .note,
+      .ask {
+        margin-top: 1.1rem;
+        padding: 1.15rem 1.2rem;
+        border-radius: 2px;
+      }
+
+      .sample,
+      .note {
+        background: var(--white);
+        border: 1px solid var(--line);
+      }
+
+      .sample h3,
+      .note h3 {
+        margin: 0 0 0.65rem;
+        font-family: Fraunces, serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .scoreline {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.95rem;
+      }
+
+      .scoreline:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0.65rem;
+      }
+
+      .rank {
+        font-variant-numeric: tabular-nums;
+        font-weight: 600;
+        color: var(--agave);
+        text-align: right;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 0.55rem 0.4rem 0.55rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      th {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
+
+      td:first-child {
+        font-weight: 600;
+        color: var(--ink);
+        width: 32%;
+        padding-right: 0.75rem;
+      }
+
+      .ask {
+        background: var(--agave);
+        color: #f4faf7;
+        margin-top: 2.4rem;
+      }
+
+      .ask h2 {
+        font-family: Fraunces, serif;
+        margin: 0 0 0.75rem;
+        font-size: 1.3rem;
+        color: #fff;
+      }
+
+      .ask p,
+      .ask li {
+        color: rgba(244, 250, 247, 0.9);
+      }
+
+      .ask strong {
+        color: #fff;
+      }
+
+      .ask .sub {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+
+      .ask hr {
+        border: none;
+        border-top: 1px solid rgba(244, 250, 247, 0.2);
+        margin: 1rem 0;
+      }
+
+      footer {
+        margin-top: 2.25rem;
+        font-size: 0.8125rem;
+        color: var(--ink-soft);
+      }
+
+      footer a {
+        color: var(--agave-mid);
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.15rem 0.45rem;
+        border-radius: 2px;
+        border: 1px solid var(--line);
+      }
+
+      .tag-high {
+        color: #9b2226;
+        border-color: rgba(155, 34, 38, 0.35);
+        background: rgba(155, 34, 38, 0.06);
+      }
+
+      .tag-med {
+        color: #9a6700;
+        border-color: rgba(154, 103, 0, 0.35);
+        background: rgba(154, 103, 0, 0.06);
+      }
+
+      .tag-watch {
+        color: var(--agave-mid);
+        border-color: rgba(45, 106, 79, 0.35);
+        background: rgba(45, 106, 79, 0.06);
+      }
+
+      .source {
+        font-size: 0.8125rem;
+        color: var(--ink-soft);
+        margin-top: 0.75rem;
+      }
+
+      .source a {
+        color: var(--agave-mid);
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+        .ask {
+          break-inside: avoid;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="eyebrow">Internal only · Frymire sprint · Not for external share this week</p>
+      <p class="brand">Frymire Home Services</p>
+      <p class="name-note">
+        Project Scoreboard (Agave Apps product — name TBD). Operator edition for Frymire Home
+        Services. Not the agency edition shared with Red Hook.
+      </p>
+      <h1>
+        Territory defense: see who’s taking your calls before you feel it on the trucks.
+      </h1>
+      <p class="lede">
+        Fear of loss sells. This scoreboard shows where Frymire is losing visible ground — by
+        <strong>service line</strong> (HVAC and plumbing) and by <strong>location</strong> — so
+        leadership can defend territory before share moves.
+      </p>
+      <div class="meta">
+        <span><strong>Client:</strong> Frymire Home Services</span>
+        <span><strong>Primary job:</strong> territory defense</span>
+        <span><strong>Services:</strong> HVAC + plumbing</span>
+        <span><strong>Market:</strong> DFW metro (by location)</span>
+        <span><strong>Audience:</strong> internal · this week</span>
+      </div>
+
+      <section>
+        <h2>Primary job: territory defense</h2>
+        <p>
+          Frymire has decades in North Texas. The risk isn’t “we don’t know our trade” — it’s
+          <strong>someone else showing up first</strong> when a homeowner searches “AC repair
+          Dallas,” “plumber Frisco,” or “emergency HVAC near me.”
+        </p>
+        <p>
+          This artifact is built to answer: <strong>who is encroaching, in which neighborhoods, on
+          which services</strong> — before dispatch volume tells the story. That’s the fear-of-loss
+          frame: defend ground you already earned.
+        </p>
+        <p>
+          HVAC and plumbing both matter. A competitor can win plumbing visibility in Collin County
+          while Frymire still looks strong on HVAC in Dallas — or vice versa. The page has to work
+          <strong>per service line and per location</strong>, not one blended “home services” score.
+        </p>
+      </section>
+
+      <section>
+        <h2>Who it’s for (this sprint)</h2>
+        <p>
+          <strong>          Frymire Home Services leadership</strong> — internal review this week. Not for
+          client or prospect distribution until Allison · Granite Comfort sign-off.
+        </p>
+        <p>
+          Frymire runs trucks, dispatch, and a sales process across the Metroplex (Dallas, Frisco,
+          McKinney, Denton, Carrollton, and surrounding communities per frymire.com). This sprint
+          tests whether a repeatable scoreboard helps defend those territories without a quarterly
+          consultant deck.
+        </p>
+      </section>
+
+      <section>
+        <h2>What you get (v1 slice)</h2>
+        <p>
+          One scoreboard, two lenses that matter for territory defense — <strong>services</strong>
+          and <strong>locations</strong>.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Slice</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HVAC view</td>
+              <td>AC repair, heating, tune-ups — paid, local pack, and organic for HVAC + geo terms</td>
+            </tr>
+            <tr>
+              <td>Plumbing view</td>
+              <td>Drains, leaks, water heaters, emergency plumbing — same channels, separate score</td>
+            </tr>
+            <tr>
+              <td>Location grid</td>
+              <td>Per-market standing (e.g. Dallas, Frisco, McKinney, Denton) — where you’re exposed</td>
+            </tr>
+            <tr>
+              <td>Who matters</td>
+              <td>Up to ~5 names per slice that actually take share in that service + territory</td>
+            </tr>
+            <tr>
+              <td>Encroachment signal</td>
+              <td>Plain-English “losing ground here” — rank movement and visibility gaps</td>
+            </tr>
+            <tr>
+              <td>Three levers</td>
+              <td>Defend moves only: visibility, offer, conversion — not a channel encyclopedia</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sample">
+          <h3>Territory defense preview</h3>
+          <p style="margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--ink-soft)">
+            Slice 3 below pulls public search-visible signals — review volume, map pack leaders, and
+            submarket encroachment patterns. Not live per-ZIP ranks.
+          </p>
+          <div class="scoreline">
+            <span><strong>HVAC · Dallas (broad)</strong></span>
+            <span class="rank">Frymire outside top 3 · Giants hold pack</span>
+          </div>
+          <div class="scoreline">
+            <span><strong>Collin · HVAC + plumbing</strong></span>
+            <span class="rank">Berkeys geographic depth · encroaching</span>
+          </div>
+          <p style="margin: 0; font-size: 0.95rem">
+            <strong>Defend levers:</strong> Collin local pack · Dallas HVAC paid vs Baker recall ·
+            emergency book path on mobile for both trades.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Markets to score (from frymire.com)</h2>
+        <p>
+          Territory defense needs a <strong>location grid</strong>, not one metro average. Frymire
+          publishes city-level service pages across the DFW metro — HVAC, AC, and plumbing each have
+          their own area index on frymire.com.
+        </p>
+        <p><strong>Confirmed first run (8 markets):</strong> high volume + visible multi-trade competition.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Why first</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td>HQ market · Baker Brothers / Berkeys / Rescue Air visibility</td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td>Collin growth · Berkeys depth</td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td>Collin growth · encroachment risk in illustration</td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td>North Dallas / Collin crossover</td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td>Western Tarrant · separate competitive set</td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td>Mid-cities bridge · multi-trade battleground</td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td>North expansion · frymire.com service area</td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td>Central metro · frymire.com service area</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="name-note" style="margin-top: 0.85rem">
+          Full published list also includes Addison, Allen, Bedford, Colleyville, Coppell, Farmers
+          Branch, Flower Mound, Garland, Grand Prairie, Grapevine, Highland Park, Highland Village,
+          Irving, Keller, Lake Highlands, Lakewood, Las Colinas, Lewisville, Murphy, Richardson,
+          Rowlett, Sachse, Southlake, St. Paul, University Park, and Wylie.
+        </p>
+      </section>
+
+      <section>
+        <h2>Slice 3 — search-visible competitors</h2>
+        <p>
+          Public data snapshot for internal territory defense. Sources: Google Maps / GBP review
+          counts (April–September 2026 public audits and aggregators), market research on DFW map
+          pack behavior. <strong>DFW rankings shift by ZIP and query</strong> — this is not a live
+          rank report.
+        </p>
+
+        <div class="note">
+          <h3>Frymire Home Services — baseline signals</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>Public data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google reviews (primary listing)</td>
+                <td>~5,200+ at 4.8★ (Google/Birdeye aggregators, 2026)</td>
+              </tr>
+              <tr>
+                <td>HQ / GBP anchor</td>
+                <td>2818 Satsuma Dr, Dallas 75229 (northwest Dallas)</td>
+              </tr>
+              <tr>
+                <td>Published service scope</td>
+                <td>HVAC + plumbing across 30+ DFW cities (frymire.com service-area index)</td>
+              </tr>
+              <tr>
+                <td>Broad Dallas HVAC map pack</td>
+                <td>Outside top 3 on “ac repair dallas tx” — giants hold positions 1–3</td>
+              </tr>
+              <tr>
+                <td>Review velocity watch</td>
+                <td>Rescue Air runs highest visible acquisition rate in market — closes gap fast</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Giants — public comparison
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Google reviews</th>
+              <th>Rating</th>
+              <th>Visible strength</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baker Brothers</td>
+              <td>~14,800</td>
+              <td>4.8</td>
+              <td>#1 map pack Dallas AC (broad) · metro-wide recall · PE (Wrench Group)</td>
+            </tr>
+            <tr>
+              <td>Rescue Air &amp; Plumbing</td>
+              <td>~6,400</td>
+              <td>4.9</td>
+              <td>#2 map pack Dallas AC · fastest review velocity in visible set</td>
+            </tr>
+            <tr>
+              <td>Berkeys</td>
+              <td>~5,900 (HVAC) · ~3,300 (Dallas plumbing location)</td>
+              <td>4.8–4.9</td>
+              <td>#3 map pack Dallas AC · Collin County depth (Plano, Frisco, McKinney, Allen)</td>
+            </tr>
+            <tr>
+              <td><strong>Frymire Home Services</strong></td>
+              <td>~5,200+</td>
+              <td>4.8</td>
+              <td>Strong review base · outside broad Dallas AC top 3 · 70+ year local brand</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="source">
+          Map pack positions from
+          <a href="https://www.builtontenth.com/hvac-research/ac-repair-market-dallas-tx">Built on Tenth Dallas AC analysis</a>
+          (April 21, 2026). Review counts rounded from Google Maps snapshots; will drift.
+        </p>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Territory defense matrix — HVAC
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Who’s visible</th>
+              <th>Frymire signal</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td>Baker Brothers, Rescue Air, Berkeys (map pack top 3)</td>
+              <td>5.2k★4.8 — competitive volume but giants hold broad query</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td>Berkeys (Collin submarket concentration)</td>
+              <td>HQ northwest Dallas — proximity gap vs Collin-centric GBPs</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td>Berkeys · Collin growth corridor</td>
+              <td>Same Collin encroachment pattern · high-income replacement ZIPs nearby</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td>Berkeys · Baker Brothers metro spill</td>
+              <td>Plano corridor (75024, 75093, 75025) = replacement-revenue territory</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td>Berkeys FW office · Baker Brothers western Tarrant</td>
+              <td>Separate competitive centroid — don’t assume Dallas rank transfers</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td>Multi-trade battleground (mid-cities)</td>
+              <td>Bridge market between Dallas and Fort Worth hubs</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td>North expansion · thinner giant saturation</td>
+              <td>frymire.com service area · defend while still winnable</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td>Central metro · proximity-sensitive</td>
+              <td>Closer to HQ anchor — potential home-turf advantage if GBP + pages align</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Territory defense matrix — plumbing
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Who’s visible</th>
+              <th>Frymire signal</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td>Berkeys (#3 Dallas plumbers public ranking) · Baker · Rescue multi-trade</td>
+              <td>Giants cross-sell plumbing on same trust layer as HVAC</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td>Berkeys Collin depth</td>
+              <td>Plumbing visibility follows HVAC geography in multi-trade shops</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td>Berkeys</td>
+              <td>Encroachment risk mirrors HVAC — emergency plumbing searches</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td>Berkeys · Baker Brothers</td>
+              <td>High-income ZIP cluster — water heater / repipe replacement tickets</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td>Berkeys FW · Baker Brothers</td>
+              <td>Verify with per-ZIP plumbing query — separate from Dallas centroid</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td>Multi-trade locals + nationals</td>
+              <td>Mid-cities emergency plumbing = high fear-of-loss query set</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td>Local independents + north expansion</td>
+              <td>Defend before a Collin player pushes north</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td>Central metro competition</td>
+              <td>Proximity to HQ — test “plumber Carrollton TX” pack separately</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note" style="margin-top: 1.1rem">
+          <h3>What “encroaching” means here</h3>
+          <p style="margin: 0">
+            <strong>High</strong> = named giants with stronger map pack or submarket concentration
+            than Frymire’s visible position on broad queries. <strong>Medium</strong> = different
+            competitive centroid or mid-cities battleground — needs per-ZIP verification.
+            <strong>Watch</strong> = defendable now; risk is future giant push or proximity drift.
+            Next step: live per-ZIP rank pull for the four Collin markets + Dallas (HVAC and plumbing
+            queries separately).
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Slice 4 — live local pack (ValueSerp / Traject)</h2>
+        <p>
+          <strong>Live pull:</strong> 2026-09-01 UTC · 16 queries · 16 API credits ·
+          provider: serpwow (Traject Data <code>search_type=places</code>).
+          Google Maps local results per market centroid — not per-ZIP. Compare to Slice 3 public
+          research above; rankings will differ by query phrasing and geo precision.
+        </p>
+        <p>
+          <strong>Query set:</strong> one HVAC + one plumbing core-intent query per market
+          (<code>ac repair &#123;city&#125; TX</code>, <code>plumber &#123;city&#125; TX</code>).
+          Full list in <a href="queries.json">queries.json</a>.
+        </p>
+
+        <div class="note">
+          <h3>Headline signals (2026-09-01)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>Live data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frymire in top 5</td>
+                <td><strong>0 of 16</strong> queries — not visible on any core query in this pull</td>
+              </tr>
+              <tr>
+                <td>Giants in top 5</td>
+                <td><strong>3 of 16</strong> — Berkeys visible in Frisco plumbing (#5), Carrollton HVAC (#5), Carrollton plumbing (#2)</td>
+              </tr>
+              <tr>
+                <td>vs Slice 3</td>
+                <td>Slice 3 giants (Baker Brothers, Rescue Air) held broad Dallas <em>web</em> local pack; this Maps pull surfaces different leaders per submarket</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Live map pack — HVAC
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Query</th>
+              <th>Top 3 visible</th>
+              <th>Frymire</th>
+              <th>Giants</th>
+              <th>Encroachment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td><code>ac repair Dallas TX</code></td>
+              <td>#1 Heating &amp; Air Conditioning Dallas City<br />#2 Berry Best Cooling &amp; Heating<br />#3 Alpha Heating &amp; Cooling Llc.</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td><code>ac repair Frisco TX</code></td>
+              <td>#1 Choice Air Care<br />#2 Varsity Zone HVAC of Frisco<br />#3 Frisco AC Repair Services</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td><code>ac repair McKinney TX</code></td>
+              <td>#1 Bill Joplin's Air Conditioning &amp; Heating<br />#2 Burnside Air Conditioning, Heating &amp; Plumbing<br />#3 Airview AC &amp; Heating Repair</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td><code>ac repair Plano TX</code></td>
+              <td>#1 Samm's Heating and Air Conditioning<br />#2 Efficient Home Solutions Heating &amp; Air of Plano<br />#3 All City</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td><code>ac repair Fort Worth TX</code></td>
+              <td>#1 Fix My Air DFW AC Repair Fort Worth<br />#2 Pure Fort Worth AC Repair<br />#3 HVAC AC Repair Hardware</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td><code>ac repair Arlington TX</code></td>
+              <td>#1 Hightower Service, Inc.<br />#2 Cool Tech Mechanical<br />#3 Superior AC &amp; Heat</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td><code>ac repair Denton TX</code></td>
+              <td>#1 BCI Plumbing, Heating and AC Repair<br />#2 Elite HVAC Repair Denton<br />#3 Cogburn's Service General dba Cogburn's Heating &amp; Air</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td><code>ac repair Carrollton TX</code></td>
+              <td>#1 Jade Air, LLC<br />#2 Eastin Heating and Air<br />#3 Ellis AC &amp; Furnace Repair</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>Berkeys #5</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Live map pack — plumbing
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Query</th>
+              <th>Top 3 visible</th>
+              <th>Frymire</th>
+              <th>Giants</th>
+              <th>Encroachment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td><code>plumber Dallas TX</code></td>
+              <td>#1 Roto-Rooter Plumbing &amp; Water Cleanup<br />#2 Public Service Plumbers<br />#3 Anchor Plumbing Company</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td><code>plumber Frisco TX</code></td>
+              <td>#1 Legacy Plumbing<br />#2 Lex's Plumbing<br />#3 VIP PLUMBING EXPERTS LLC</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>Berkeys #5</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td><code>plumber McKinney TX</code></td>
+              <td>#1 Bewley Plumbing, LLC<br />#2 JMP Plumbing Services<br />#3 Roto-Rooter Plumbing &amp; Water Cleanup</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td><code>plumber Plano TX</code></td>
+              <td>#1 DNA Plumbing Heating and Air<br />#2 Staggs Plumbing<br />#3 Classic Plumbing</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td><code>plumber Fort Worth TX</code></td>
+              <td>#1 Benjamin Franklin Plumbing, Water Heaters, &amp; Drain Cleaning<br />#2 Mr. Rooter Plumbing of Fort Worth<br />#3 Rick's Water Heating Repair Fort Worth</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td><code>plumber Arlington TX</code></td>
+              <td>#1 Ernie's Plumbing Service, Inc.<br />#2 Direct Source Plumbing<br />#3 STALCUP PLUMBING</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td><code>plumber Denton TX</code></td>
+              <td>#1 Brown and Son's Plumbing<br />#2 Plumber True Services of Denton, TX<br />#3 Strittmatter Plumbing, Heating and AC</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>—</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td><code>plumber Carrollton TX</code></td>
+              <td>#1 Accurate Leak and Line - Dallas<br />#2 Berkeys Plumbing, A/C &amp; Electrical <em>(Berkeys)</em><br />#3 Anchor Plumbing Company</td>
+              <td><span class="tag tag-high">Not in top 5</span></td>
+              <td>Berkeys #2</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="source">
+          Source: Traject Data Places API (serpwow), fetched 2026-09-01 UTC.
+          Raw JSON: <a href="results.json">results.json</a>.
+          Re-run: <code>python3 fetch_local_pack.py</code> (requires
+          <code>VALUESERP_API_KEY</code> or <code>SERPWOW_API_KEY</code>).
+        </p>
+      </section>
+
+      <section>
+        <h2>Locked out of v1</h2>
+        <p><strong>Social</strong> — full network coverage. Out for v1.</p>
+        <ul>
+          <li>Deep website UX audits and redesign recommendations</li>
+          <li>Call-center QA, dispatch optimization, or field ops scorecards</li>
+          <li>Franchise / PE roll-up modeling</li>
+          <li>Anything that only works as a one-off custom build</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Jobs (ranked)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Job</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Territory defense</strong></td>
+              <td>Primary. See encroachment by service and location before truck counts move — fear of loss drives action.</td>
+            </tr>
+            <tr>
+              <td>Marketing spend defense</td>
+              <td>Know where paid/local spend is losing to multi-trade giants (Baker Brothers, Berkeys, etc.)</td>
+            </tr>
+            <tr>
+              <td>Leadership cadence</td>
+              <td>Monthly or quarterly “where are we exposed?” without a consultant deck</td>
+            </tr>
+            <tr>
+              <td>Vendor accountability</td>
+              <td>Shared internal artifact when SEO/PPC or site vendors claim “we’re winning”</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Sprint decisions (locked)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Client</td>
+              <td>Frymire Home Services (frymire.com)</td>
+            </tr>
+            <tr>
+              <td>Service lines</td>
+              <td><strong>Both HVAC and plumbing</strong> — scoreboard valuable per service and per location</td>
+            </tr>
+            <tr>
+              <td>Primary job</td>
+              <td><strong>Territory defense</strong> — fear of loss sells</td>
+            </tr>
+            <tr>
+              <td>Distribution</td>
+              <td><strong>Internal only this week</strong> — Allison · Granite Comfort sign-off before external share</td>
+            </tr>
+            <tr>
+              <td>Geo scope</td>
+              <td>DFW metro by location — first 8 markets confirmed</td>
+            </tr>
+            <tr>
+              <td>Giants</td>
+              <td>Baker Brothers, Berkeys, Rescue Air — confirmed (Slice 3 public data)</td>
+            </tr>
+            <tr>
+              <td>External sign-off</td>
+              <td><strong>Allison · Granite Comfort</strong> — before share beyond internal</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <h3>Still open (internal)</h3>
+          <p style="margin: 0">
+            Per-ZIP live rank verification, competitor discovery workflow (typed vs auto), and
+            emergency-call website minimum checks — before Allison / Granite Comfort sign-off and
+            share with Frymire leadership.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>How it’s delivered</h2>
+        <p>
+          <strong>Branded HTML report</strong> — internal link and/or PDF. Not PowerPoint.
+        </p>
+        <p>
+          Frymire Home Services brand on the wrapper when ready for external use. Leadership reviews
+          on a phone; PDF is print/save from the same artifact. Slice 3 adds
+          <strong>public sourced data</strong>; Slice 4 adds <strong>live map pack pulls</strong>.
+          Internal only until Allison · Granite Comfort sign-off.
+        </p>
+        <p>
+          Delivery options (static HTML, JSON + generated HTML, Sheets, agaveapps.com, PDF):
+          <a href="DELIVERY.md">DELIVERY.md</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sprint backlog</h2>
+        <ol>
+          <li><strong>Done:</strong> scope lock — Frymire Home Services, HVAC + plumbing, territory defense, internal</li>
+          <li><strong>Done:</strong> draft location grid from frymire.com service-area index</li>
+          <li><strong>Done:</strong> Slice 3 — search-visible competitor set per service + market (public sourced data, not invented ranks)</li>
+          <li><strong>Done:</strong> Slice 4 — live local pack pull (16 queries, Traject Places API) · see <a href="DELIVERY.md">DELIVERY.md</a></li>
+          <li><strong>Later:</strong> Frymire-branded wrapper when approved for external share</li>
+          <li><strong>Later:</strong> product path on agaveapps.com when dynamic hosting is ready</li>
+        </ol>
+      </section>
+
+      <div class="ask">
+        <h2>Internal review (this week)</h2>
+        <p>
+          <strong
+            >When Frymire leadership reads “encroaching” on plumbing in McKinney — is that the kind
+            of fear that would trigger a defend decision?</strong
+          >
+        </p>
+        <p class="sub">
+          Territory defense is the filter. If a line doesn’t make someone want to protect ground,
+          cut it.
+        </p>
+        <hr />
+        <p><strong>Checklist for Tyler / internal team:</strong></p>
+        <ol>
+          <li>
+            <strong>Confirmed:</strong> 8 priority markets — Dallas, Frisco, McKinney, Plano, Fort
+            Worth, Arlington, Denton, Carrollton
+          </li>
+          <li>
+            <strong>Confirmed:</strong> Baker Brothers, Berkeys, Rescue Air as DFW giants in Slice 3
+          </li>
+          <li>Does HVAC vs plumbing split match how Frymire thinks about territories?</li>
+          <li>What’s the one emergency-call failure on the site (book path, phone, speed)?</li>
+          <li>
+            <strong>Confirmed:</strong> Allison · Granite Comfort signs off before external share
+          </li>
+          <li>What would you cut before showing Read or ops leadership?</li>
+        </ol>
+      </div>
+
+      <footer>
+        Frymire Home Services · Internal sprint · Private share link ·
+        <a href="mailto:tyleryost@sharonoak.com?subject=Frymire%20Home%20Services%20Scoreboard%20(internal)">tyleryost@sharonoak.com</a>
+      </footer>
+    </div>
+  </body>
+</html>

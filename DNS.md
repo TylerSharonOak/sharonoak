@@ -53,7 +53,8 @@ Example: `agave` / `rhm` (Red Hook) / `scoreboard` / `v1`.
 
 | Path | Purpose |
 |---|---|
-| [/agave/rhm/scoreboard/v1/](https://sharonoak.com/agave/rhm/scoreboard/v1/) | Project Scoreboard v1 — Red Hook / Chase |
-| [/agave/rhm/](https://sharonoak.com/agave/rhm/) · [/agave/pl1-CW/](https://sharonoak.com/agave/pl1-CW/) | Redirect → current version |
+| [/agave/rhm/scoreboard/v1/](https://sharonoak.com/agave/rhm/scoreboard/v1/) | Project Scoreboard v1 — Red Hook / Chase (agency edition) |
+| [/agave/frymire/scoreboard/v1/](https://sharonoak.com/agave/frymire/scoreboard/v1/) | Project Scoreboard v1 — Frymire Home Services (operator · territory defense · internal) |
+| [/agave/rhm/](https://sharonoak.com/agave/rhm/) · [/agave/pl1-CW/](https://sharonoak.com/agave/pl1-CW/) · [/agave/frymire/](https://sharonoak.com/agave/frymire/) | Redirect → current version |
 
 Source: `sites/sharonoak/agave/rhm/scoreboard/v1/index.html` (also mirrored from `products/agave-landscape/one-pager.html`). Pages have `noindex`.

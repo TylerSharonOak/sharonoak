@@ -1,0 +1,45 @@
+{
+  "version": "1",
+  "purpose": "territory_defense",
+  "client": "Frymire Home Services",
+  "markets": [
+    "Dallas",
+    "Frisco",
+    "McKinney",
+    "Plano",
+    "Fort Worth",
+    "Arlington",
+    "Denton",
+    "Carrollton"
+  ],
+  "giants": [
+    "Baker Brothers",
+    "Berkeys",
+    "Rescue Air"
+  ],
+  "rationale": "Two high-intent queries per market — HVAC and plumbing — mirror how homeowners search when something breaks. Broad geo terms (not 'near me') keep results comparable across the 8-market grid and surface map-pack leaders who are taking calls before Frymire feels it on the trucks. Emergency variants are documented for a follow-up pull.",
+  "queries": [
+    { "id": "dallas-hvac", "market": "Dallas", "service": "hvac", "intent": "core", "q": "ac repair Dallas TX", "location": "Dallas,Texas,United States" },
+    { "id": "dallas-plumbing", "market": "Dallas", "service": "plumbing", "intent": "core", "q": "plumber Dallas TX", "location": "Dallas,Texas,United States" },
+    { "id": "frisco-hvac", "market": "Frisco", "service": "hvac", "intent": "core", "q": "ac repair Frisco TX", "location": "Frisco,Texas,United States" },
+    { "id": "frisco-plumbing", "market": "Frisco", "service": "plumbing", "intent": "core", "q": "plumber Frisco TX", "location": "Frisco,Texas,United States" },
+    { "id": "mckinney-hvac", "market": "McKinney", "service": "hvac", "intent": "core", "q": "ac repair McKinney TX", "location": "McKinney,Texas,United States" },
+    { "id": "mckinney-plumbing", "market": "McKinney", "service": "plumbing", "intent": "core", "q": "plumber McKinney TX", "location": "McKinney,Texas,United States" },
+    { "id": "plano-hvac", "market": "Plano", "service": "hvac", "intent": "core", "q": "ac repair Plano TX", "location": "Plano,Texas,United States" },
+    { "id": "plano-plumbing", "market": "Plano", "service": "plumbing", "intent": "core", "q": "plumber Plano TX", "location": "Plano,Texas,United States" },
+    { "id": "fort-worth-hvac", "market": "Fort Worth", "service": "hvac", "intent": "core", "q": "ac repair Fort Worth TX", "location": "Fort Worth,Texas,United States" },
+    { "id": "fort-worth-plumbing", "market": "Fort Worth", "service": "plumbing", "intent": "core", "q": "plumber Fort Worth TX", "location": "Fort Worth,Texas,United States" },
+    { "id": "arlington-hvac", "market": "Arlington", "service": "hvac", "intent": "core", "q": "ac repair Arlington TX", "location": "Arlington,Texas,United States" },
+    { "id": "arlington-plumbing", "market": "Arlington", "service": "plumbing", "intent": "core", "q": "plumber Arlington TX", "location": "Arlington,Texas,United States" },
+    { "id": "denton-hvac", "market": "Denton", "service": "hvac", "intent": "core", "q": "ac repair Denton TX", "location": "Denton,Texas,United States" },
+    { "id": "denton-plumbing", "market": "Denton", "service": "plumbing", "intent": "core", "q": "plumber Denton TX", "location": "Denton,Texas,United States" },
+    { "id": "carrollton-hvac", "market": "Carrollton", "service": "hvac", "intent": "core", "q": "ac repair Carrollton TX", "location": "Carrollton,Texas,United States" },
+    { "id": "carrollton-plumbing", "market": "Carrollton", "service": "plumbing", "intent": "core", "q": "plumber Carrollton TX", "location": "Carrollton,Texas,United States" }
+  ],
+  "expansion_queries": [
+    { "intent": "emergency_hvac", "template": "emergency hvac {market} TX" },
+    { "intent": "emergency_plumbing", "template": "emergency plumber {market} TX" },
+    { "intent": "heating", "template": "furnace repair {market} TX" },
+    { "intent": "water_heater", "template": "water heater repair {market} TX" }
+  ]
+}
