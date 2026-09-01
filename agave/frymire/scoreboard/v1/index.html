@@ -263,6 +263,45 @@
         color: var(--agave-mid);
       }
 
+      .tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.15rem 0.45rem;
+        border-radius: 2px;
+        border: 1px solid var(--line);
+      }
+
+      .tag-high {
+        color: #9b2226;
+        border-color: rgba(155, 34, 38, 0.35);
+        background: rgba(155, 34, 38, 0.06);
+      }
+
+      .tag-med {
+        color: #9a6700;
+        border-color: rgba(154, 103, 0, 0.35);
+        background: rgba(154, 103, 0, 0.06);
+      }
+
+      .tag-watch {
+        color: var(--agave-mid);
+        border-color: rgba(45, 106, 79, 0.35);
+        background: rgba(45, 106, 79, 0.06);
+      }
+
+      .source {
+        font-size: 0.8125rem;
+        color: var(--ink-soft);
+        margin-top: 0.75rem;
+      }
+
+      .source a {
+        color: var(--agave-mid);
+      }
+
       @media print {
         body {
           background: #fff;
@@ -321,8 +360,8 @@
       <section>
         <h2>Who it’s for (this sprint)</h2>
         <p>
-          <strong>Frymire Home Services leadership</strong> — internal review this week. Not for
-          client or prospect distribution until scope and data are validated.
+          <strong>          Frymire Home Services leadership</strong> — internal review this week. Not for
+          client or prospect distribution until Allison · Granite Comfort sign-off.
         </p>
         <p>
           Frymire runs trucks, dispatch, and a sales process across the Metroplex (Dallas, Frisco,
@@ -374,31 +413,22 @@
         </table>
 
         <div class="sample">
-          <h3>Territory defense example <span style="font-weight:500;color:var(--ink-soft)">(illustrative · not live data)</span></h3>
+          <h3>Territory defense preview</h3>
           <p style="margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--ink-soft)">
-            DFW multi-trade operators often visible in search — ranks are hypothetical for internal
-            discussion only.
+            Slice 3 below pulls public search-visible signals — review volume, map pack leaders, and
+            submarket encroachment patterns. Not live per-ZIP ranks.
           </p>
           <div class="scoreline">
-            <span><strong>HVAC · Dallas</strong></span>
-            <span class="rank">Frymire #4 · Baker Brothers #1</span>
+            <span><strong>HVAC · Dallas (broad)</strong></span>
+            <span class="rank">Frymire outside top 3 · Giants hold pack</span>
           </div>
           <div class="scoreline">
-            <span><strong>HVAC · Frisco / Collin</strong></span>
-            <span class="rank">Frymire #3 · Berkeys #1</span>
-          </div>
-          <div class="scoreline">
-            <span><strong>Plumbing · Dallas</strong></span>
-            <span class="rank">Frymire #2 · Rescue Air &amp; Plumbing #1</span>
-          </div>
-          <div class="scoreline">
-            <span><strong>Plumbing · McKinney</strong></span>
-            <span class="rank">Frymire #5 · Berkeys #1 · encroaching</span>
+            <span><strong>Collin · HVAC + plumbing</strong></span>
+            <span class="rank">Berkeys geographic depth · encroaching</span>
           </div>
           <p style="margin: 0; font-size: 0.95rem">
-            <strong>Defend levers:</strong> (1) Collin plumbing local pack — Berkeys depth in
-            Frisco/McKinney · (2) Dallas HVAC paid coverage vs Baker Brothers recall · (3) emergency
-            book path on mobile for both trades — social stays out of v1.
+            <strong>Defend levers:</strong> Collin local pack · Dallas HVAC paid vs Baker recall ·
+            emergency book path on mobile for both trades.
           </p>
         </div>
       </section>
@@ -410,7 +440,7 @@
           publishes city-level service pages across the DFW metro — HVAC, AC, and plumbing each have
           their own area index on frymire.com.
         </p>
-        <p><strong>Suggested first run (8 markets):</strong> high volume + visible multi-trade competition.</p>
+        <p><strong>Confirmed first run (8 markets):</strong> high volume + visible multi-trade competition.</p>
         <table>
           <thead>
             <tr>
@@ -459,6 +489,235 @@
           Irving, Keller, Lake Highlands, Lakewood, Las Colinas, Lewisville, Murphy, Richardson,
           Rowlett, Sachse, Southlake, St. Paul, University Park, and Wylie.
         </p>
+      </section>
+
+      <section>
+        <h2>Slice 3 — search-visible competitors</h2>
+        <p>
+          Public data snapshot for internal territory defense. Sources: Google Maps / GBP review
+          counts (April–September 2026 public audits and aggregators), market research on DFW map
+          pack behavior. <strong>DFW rankings shift by ZIP and query</strong> — this is not a live
+          rank report.
+        </p>
+
+        <div class="note">
+          <h3>Frymire Home Services — baseline signals</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>Public data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google reviews (primary listing)</td>
+                <td>~5,200+ at 4.8★ (Google/Birdeye aggregators, 2026)</td>
+              </tr>
+              <tr>
+                <td>HQ / GBP anchor</td>
+                <td>2818 Satsuma Dr, Dallas 75229 (northwest Dallas)</td>
+              </tr>
+              <tr>
+                <td>Published service scope</td>
+                <td>HVAC + plumbing across 30+ DFW cities (frymire.com service-area index)</td>
+              </tr>
+              <tr>
+                <td>Broad Dallas HVAC map pack</td>
+                <td>Outside top 3 on “ac repair dallas tx” — giants hold positions 1–3</td>
+              </tr>
+              <tr>
+                <td>Review velocity watch</td>
+                <td>Rescue Air runs highest visible acquisition rate in market — closes gap fast</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Giants — public comparison
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Google reviews</th>
+              <th>Rating</th>
+              <th>Visible strength</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baker Brothers</td>
+              <td>~14,800</td>
+              <td>4.8</td>
+              <td>#1 map pack Dallas AC (broad) · metro-wide recall · PE (Wrench Group)</td>
+            </tr>
+            <tr>
+              <td>Rescue Air &amp; Plumbing</td>
+              <td>~6,400</td>
+              <td>4.9</td>
+              <td>#2 map pack Dallas AC · fastest review velocity in visible set</td>
+            </tr>
+            <tr>
+              <td>Berkeys</td>
+              <td>~5,900 (HVAC) · ~3,300 (Dallas plumbing location)</td>
+              <td>4.8–4.9</td>
+              <td>#3 map pack Dallas AC · Collin County depth (Plano, Frisco, McKinney, Allen)</td>
+            </tr>
+            <tr>
+              <td><strong>Frymire Home Services</strong></td>
+              <td>~5,200+</td>
+              <td>4.8</td>
+              <td>Strong review base · outside broad Dallas AC top 3 · 70+ year local brand</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="source">
+          Map pack positions from
+          <a href="https://www.builtontenth.com/hvac-research/ac-repair-market-dallas-tx">Built on Tenth Dallas AC analysis</a>
+          (April 21, 2026). Review counts rounded from Google Maps snapshots; will drift.
+        </p>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Territory defense matrix — HVAC
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Who’s visible</th>
+              <th>Frymire signal</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td>Baker Brothers, Rescue Air, Berkeys (map pack top 3)</td>
+              <td>5.2k★4.8 — competitive volume but giants hold broad query</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td>Berkeys (Collin submarket concentration)</td>
+              <td>HQ northwest Dallas — proximity gap vs Collin-centric GBPs</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td>Berkeys · Collin growth corridor</td>
+              <td>Same Collin encroachment pattern · high-income replacement ZIPs nearby</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td>Berkeys · Baker Brothers metro spill</td>
+              <td>Plano corridor (75024, 75093, 75025) = replacement-revenue territory</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td>Berkeys FW office · Baker Brothers western Tarrant</td>
+              <td>Separate competitive centroid — don’t assume Dallas rank transfers</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td>Multi-trade battleground (mid-cities)</td>
+              <td>Bridge market between Dallas and Fort Worth hubs</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td>North expansion · thinner giant saturation</td>
+              <td>frymire.com service area · defend while still winnable</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td>Central metro · proximity-sensitive</td>
+              <td>Closer to HQ anchor — potential home-turf advantage if GBP + pages align</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-family: Fraunces, serif; font-size: 1.1rem; margin: 1.5rem 0 0.65rem">
+          Territory defense matrix — plumbing
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Who’s visible</th>
+              <th>Frymire signal</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dallas</td>
+              <td>Berkeys (#3 Dallas plumbers public ranking) · Baker · Rescue multi-trade</td>
+              <td>Giants cross-sell plumbing on same trust layer as HVAC</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Frisco</td>
+              <td>Berkeys Collin depth</td>
+              <td>Plumbing visibility follows HVAC geography in multi-trade shops</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>McKinney</td>
+              <td>Berkeys</td>
+              <td>Encroachment risk mirrors HVAC — emergency plumbing searches</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Plano</td>
+              <td>Berkeys · Baker Brothers</td>
+              <td>High-income ZIP cluster — water heater / repipe replacement tickets</td>
+              <td><span class="tag tag-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fort Worth</td>
+              <td>Berkeys FW · Baker Brothers</td>
+              <td>Verify with per-ZIP plumbing query — separate from Dallas centroid</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Arlington</td>
+              <td>Multi-trade locals + nationals</td>
+              <td>Mid-cities emergency plumbing = high fear-of-loss query set</td>
+              <td><span class="tag tag-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Denton</td>
+              <td>Local independents + north expansion</td>
+              <td>Defend before a Collin player pushes north</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+            <tr>
+              <td>Carrollton</td>
+              <td>Central metro competition</td>
+              <td>Proximity to HQ — test “plumber Carrollton TX” pack separately</td>
+              <td><span class="tag tag-watch">Watch</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note" style="margin-top: 1.1rem">
+          <h3>What “encroaching” means here</h3>
+          <p style="margin: 0">
+            <strong>High</strong> = named giants with stronger map pack or submarket concentration
+            than Frymire’s visible position on broad queries. <strong>Medium</strong> = different
+            competitive centroid or mid-cities battleground — needs per-ZIP verification.
+            <strong>Watch</strong> = defendable now; risk is future giant push or proximity drift.
+            Next step: live per-ZIP rank pull for the four Collin markets + Dallas (HVAC and plumbing
+            queries separately).
+          </p>
+        </div>
       </section>
 
       <section>
@@ -526,19 +785,28 @@
             </tr>
             <tr>
               <td>Distribution</td>
-              <td><strong>Internal only this week</strong> — no external share until validated</td>
+              <td><strong>Internal only this week</strong> — Allison · Granite Comfort sign-off before external share</td>
             </tr>
             <tr>
               <td>Geo scope</td>
-              <td>DFW metro by location (start with core markets on frymire.com service area)</td>
+              <td>DFW metro by location — first 8 markets confirmed</td>
+            </tr>
+            <tr>
+              <td>Giants</td>
+              <td>Baker Brothers, Berkeys, Rescue Air — confirmed (Slice 3 public data)</td>
+            </tr>
+            <tr>
+              <td>External sign-off</td>
+              <td><strong>Allison · Granite Comfort</strong> — before share beyond internal</td>
             </tr>
           </tbody>
         </table>
         <div class="note">
           <h3>Still open (internal)</h3>
           <p style="margin: 0">
-            Competitor discovery method (typed vs auto), website minimum checks for emergency calls,
-            and who signs off on “accurate enough to act on” — resolve before any external share.
+            Per-ZIP live rank verification, competitor discovery workflow (typed vs auto), and
+            emergency-call website minimum checks — before Allison / Granite Comfort sign-off and
+            share with Frymire leadership.
           </p>
         </div>
       </section>
@@ -550,8 +818,10 @@
         </p>
         <p>
           Frymire Home Services brand on the wrapper when ready for external use. Leadership reviews
-          on a phone; PDF is print/save from the same artifact. This week: hypothesis page only —
-          illustrative competitors, not live rankings.
+          on a phone; PDF is print/save from the same artifact. Slice 3 adds
+          <strong>public sourced data</strong> — Google review counts, map pack leaders, and
+          submarket encroachment patterns — not live per-ZIP rank pulls. Internal only until Allison
+          · Granite Comfort sign-off.
         </p>
       </section>
 
@@ -560,7 +830,7 @@
         <ol>
           <li><strong>Done:</strong> scope lock — Frymire Home Services, HVAC + plumbing, territory defense, internal</li>
           <li><strong>Done:</strong> draft location grid from frymire.com service-area index</li>
-          <li><strong>Next:</strong> pull search-visible competitor set per service + market (not invented ranks)</li>
+          <li><strong>Done:</strong> Slice 3 — search-visible competitor set per service + market (public sourced data, not invented ranks)</li>
           <li><strong>Later:</strong> Frymire-branded wrapper when approved for external share</li>
           <li><strong>Later:</strong> product path on agaveapps.com when dynamic hosting is ready</li>
         </ol>
@@ -581,11 +851,18 @@
         <hr />
         <p><strong>Checklist for Tyler / internal team:</strong></p>
         <ol>
-          <li>Which 3–5 DFW locations matter most for first real run?</li>
-          <li>Are Baker Brothers / Berkeys / Rescue Air the right “giants” in the illustration?</li>
+          <li>
+            <strong>Confirmed:</strong> 8 priority markets — Dallas, Frisco, McKinney, Plano, Fort
+            Worth, Arlington, Denton, Carrollton
+          </li>
+          <li>
+            <strong>Confirmed:</strong> Baker Brothers, Berkeys, Rescue Air as DFW giants in Slice 3
+          </li>
           <li>Does HVAC vs plumbing split match how Frymire thinks about territories?</li>
           <li>What’s the one emergency-call failure on the site (book path, phone, speed)?</li>
-          <li>Who at Frymire signs off before we share beyond internal?</li>
+          <li>
+            <strong>Confirmed:</strong> Allison · Granite Comfort signs off before external share
+          </li>
           <li>What would you cut before showing Read or ops leadership?</li>
         </ol>
       </div>
