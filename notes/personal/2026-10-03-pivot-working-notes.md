@@ -55,3 +55,7 @@ Sleep anchors already in place: **8:45 PM** get-ready alarm → **9:00 PM** bed.
 - Review: Did prayer happen? Did checking stop? How was presence at home?
 - Take the FIL intro conversation.
 - Then revisit: stay-and-reshape vs explore SE / advisory / other — with sleep restored.
+
+## Strengths weekly scorecard
+
+See [`weekly-strengths-scorecard.md`](./weekly-strengths-scorecard.md) — great vs bad week by Top 5 + Cursor prompt to rate each week.
